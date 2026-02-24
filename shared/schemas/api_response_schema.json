@@ -1,0 +1,5 @@
+/* Purpose: API response schema contract */
+{
+  "type": "object",
+  "required": ["status"]
+}

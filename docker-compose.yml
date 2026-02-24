@@ -1,0 +1,7 @@
+# Purpose: Local multi-service runtime
+version: '3.9'
+services:
+  backend:
+    build: ./backend
+  frontend:
+    build: ./frontend

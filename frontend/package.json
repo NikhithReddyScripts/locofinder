@@ -1,0 +1,6 @@
+/* Purpose: Frontend package metadata */
+{
+  "name": "locofinder-frontend",
+  "version": "0.1.0",
+  "private": true
+}

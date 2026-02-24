@@ -1,0 +1,6 @@
+# Purpose: Ignore generated/local files
+__pycache__/
+*.pyc
+.venv/
+.env
+node_modules/

@@ -1,0 +1,4 @@
+# Purpose: Data source configuration
+sources:
+  census:
+    endpoint: https://api.census.gov/data

@@ -1,0 +1,5 @@
+# Purpose: Recommendation API contract
+request:
+  type: object
+response:
+  type: object

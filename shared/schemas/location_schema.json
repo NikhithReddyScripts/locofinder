@@ -1,0 +1,5 @@
+/* Purpose: Location schema contract */
+{
+  "type": "object",
+  "required": ["location_id", "name"]
+}
