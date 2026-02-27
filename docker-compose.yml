@@ -1,10 +1,11 @@
 # Purpose: Local multi-service runtime
-version: '3.9'
+version: "3.9"
 services:
   redis:
     image: redis:7-alpine
     ports:
       - "6379:6379"
+
   backend:
     build: ./backend
     ports:
@@ -13,5 +14,15 @@ services:
       - REDIS_URL=redis://redis:6379
     depends_on:
       - redis
+
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        - NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
+    depends_on:
+      - backend
