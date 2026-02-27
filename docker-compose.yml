@@ -1,10 +1,11 @@
-# Purpose: Local multi-service runtime
 version: "3.9"
+
 services:
   redis:
     image: redis:7-alpine
     ports:
       - "6379:6379"
+    restart: unless-stopped
 
   backend:
     build: ./backend
@@ -14,15 +15,23 @@ services:
       - REDIS_URL=redis://redis:6379
     depends_on:
       - redis
+    restart: unless-stopped
+    # Mount data dir so parquet file persists across rebuilds and is
+    # shared with the generate_dummy_data.py script run from the host.
+    volumes:
+      - ./backend/data:/app/data
 
   frontend:
     build:
       context: ./frontend
+      # NEXT_PUBLIC_* vars are inlined at build time by Next.js.
+      # Inside Docker, containers reach the backend via the service name.
       args:
-        - NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
+        - NEXT_PUBLIC_API_BASE_URL=http://backend:8000
     ports:
       - "3000:3000"
     environment:
-      - NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
+      - NEXT_PUBLIC_API_BASE_URL=http://backend:8000
     depends_on:
       - backend
+    restart: unless-stopped
