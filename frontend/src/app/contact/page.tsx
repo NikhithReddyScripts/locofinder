@@ -13,7 +13,6 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement actual form submission
     console.log('Form submitted:', formData);
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
@@ -26,9 +25,31 @@ export default function ContactPage() {
     });
   };
 
+  const teamMembers = [
+     {
+      name: 'Sumanth Paila',
+      role: 'Data Scientist',
+      description: 'Graduate student at SDSU specializing in computer vision and machine learning. Passionate about applying AI to solve real-world business problems.',
+      image: '/team/sumanth.jpg', // Replace with actual image path
+    },
+    {
+      name: 'Nikhith Reddy',
+      role: 'Lead Developer',
+      description: 'Full-stack developer specializing in geospatial applications and AI integration. Passionate about building tools that help entrepreneurs make data-driven decisions.',
+      image: '/team/nikhith.jpg', // Replace with actual image path
+    },
+    {
+      name: 'Narsimha Atla',
+      role: 'Backend Engineer',
+      description: 'Expert in Python, FastAPI, and spatial data processing. Focuses on building scalable backend systems and optimizing API performance.',
+      image: '/team/narsimha.jpg', // Replace with actual image path
+    },
+    
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-5xl mx-auto px-6 py-12">
+      <div className="max-w-6xl mx-auto px-6 py-12">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -39,6 +60,45 @@ export default function ContactPage() {
           </p>
         </div>
 
+        {/* Meet the Team Section */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+            Meet the Team
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                {/* Image Placeholder */}
+                <div className="h-64 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                  <div className="w-40 h-40 bg-white rounded-full flex items-center justify-center">
+                    <span className="text-6xl text-gray-400">👤</span>
+                  </div>
+                  {/* Uncomment below and remove placeholder above when you have actual images */}
+                  {/* <img 
+                    src={member.image} 
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  /> */}
+                </div>
+                
+                {/* Team Member Info */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-sm font-semibold text-blue-600 mb-3">
+                    {member.role}
+                  </p>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    {member.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Contact Form and Info */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Contact Info */}
           <div className="space-y-6">
