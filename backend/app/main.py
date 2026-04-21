@@ -1,10 +1,18 @@
 # Purpose: FastAPI app entrypoint
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from app.core.config import settings
 from app.core.logging import configure_logging
 from app.db.redis import redis_client
-from app.api import routes_health, routes_locations, routes_admin, routes_scoring
+from app.api import (
+    routes_health,
+    routes_locations,
+    routes_admin,
+    routes_scoring,
+    routes_market_research,
+    routes_business_recommendations
+)
 
 logger = configure_logging()
 
@@ -24,8 +32,26 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+# CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://localhost:3002",
+        "http://127.0.0.1:3000",
+        "http://127.0.0.1:3001",
+        "http://127.0.0.1:3002"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Register routes
 routes_health.register_routes(app)
 routes_locations.register_routes(app)
 routes_admin.register_routes(app)
 routes_scoring.register_routes(app)
-
+routes_market_research.register_routes(app)
+routes_business_recommendations.register_routes(app)

@@ -1,0 +1,42 @@
+# Purpose: FastAPI app entrypoint
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
+from app.core.config import settings
+from app.core.logging import configure_logging
+from app.db.redis import redis_client
+from app.api import routes_health, routes_locations, routes_admin, routes_scoring, routes_market_research
+
+logger = configure_logging()
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup
+    logger.info(f"Starting {settings.PROJECT_NAME} v{settings.VERSION}")
+    redis_client.init_pool(settings.REDIS_URL)
+    yield
+    # Shutdown
+    logger.info("Shutting down...")
+    await redis_client.close()
+
+app = FastAPI(
+    title=settings.PROJECT_NAME,
+    version=settings.VERSION,
+    lifespan=lifespan
+)
+
+# CORS middleware for frontend access
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000", "http://localhost:3001", "http://127.0.0.1:3000", "http://127.0.0.1:3001"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+routes_health.register_routes(app)
+routes_locations.register_routes(app)
+routes_admin.register_routes(app)
+routes_scoring.register_routes(app)
+routes_market_research.register_routes(app)
+

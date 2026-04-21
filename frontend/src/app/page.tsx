@@ -9,6 +9,7 @@ import ResultsView from "@/components/ResultsView";
 import LocationDrawer from "@/components/LocationDrawer";
 import { Button } from "@/components/ui/Button";
 import type { RecommendResult } from "@/lib/schemas";
+// import EnhancedResultsTable from '@/components/EnhancedResultsTable';
 
 export default function HomePage() {
   const store = useFiltersStore();
@@ -110,13 +111,47 @@ export default function HomePage() {
             )}
           </div>
 
-          {/* Results */}
-          <ResultsView
-            results={results}
-            isLoading={recommend.isPending}
-            onSelectResult={handleSelectResult}
-            selectedId={selectedResult?.location.location_id}
-          />
+          {/* Results - UPDATED TO USE ENHANCED TABLE */}
+          {recommend.isPending ? (
+            <div className="text-center py-12 text-gray-500">
+              Loading recommendations...
+            </div>
+          ) : results.length > 0 ? (
+            <EnhancedResultsTable 
+              locations={results.map(r => ({
+                location_id: r.location.location_id,
+                city: r.location.city,
+                state: r.location.state,
+                latitude: r.location.latitude,
+                longitude: r.location.longitude,
+                total_score: r.total_score,
+                median_income: r.location.median_income,
+                crime_index: r.location.crime_index,
+                growth_index: r.location.growth_index,
+                home_price: r.location.home_price,
+                rent_price: r.location.rent_price,
+                // Market data will be added when backend is updated
+                competitor_count: (r.location as any).competitor_count,
+                population_estimate: (r.location as any).population_estimate,
+                zone_category: (r.location as any).zone_category,
+                in_commercial_zone: (r.location as any).in_commercial_zone,
+                market_saturation: (r.location as any).market_saturation,
+                market_score: (r.location as any).market_score,
+              }))}
+              showMarketData={true}
+              onLocationClick={(loc) => {
+                // Find the original result and open drawer
+                const result = results.find(r => r.location.location_id === loc.location_id);
+                if (result) {
+                  setSelectedResult(result);
+                }
+              }}
+            />
+          ) : (
+            <div className="text-center py-12 text-gray-500">
+              Run a recommendation to see results here.
+            </div>
+          )}
         </div>
       </div>
 

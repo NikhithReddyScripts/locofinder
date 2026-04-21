@@ -2,8 +2,16 @@
 const nextConfig = {
   reactStrictMode: true,
   output: "standalone",
-  // Leaflet requires transpilation to work with Next.js
   transpilePackages: ["leaflet", "react-leaflet"],
+  
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://localhost:8001/api/:path*',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
