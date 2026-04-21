@@ -18,15 +18,6 @@ export default function SWOTPage() {
           </p>
         </div>
 
-        {/* Coming Soon Notice */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8 text-center">
-          <h2 className="text-2xl font-semibold text-blue-900 mb-2">🚧 Coming Soon</h2>
-          <p className="text-blue-700">
-            SWOT Analysis feature is currently under development. Check back soon for detailed
-            location-specific analysis!
-          </p>
-        </div>
-
         {/* SWOT Template Preview */}
         <div className="bg-white rounded-lg shadow-md p-8">
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">
