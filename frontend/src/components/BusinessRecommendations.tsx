@@ -254,7 +254,7 @@ export default function BusinessRecommendations() {
         ideal_saturation: competitionTolerance === 'low' ? 2 : competitionTolerance === 'medium' ? 5 : 8,
       };
 
-      const response = await fetch('http://localhost:8001/api/v1/recommend/business-locations', {
+      const response = await fetch('https://loco-finder-production.up.railway.app/api/v1/recommend/business-locations', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
