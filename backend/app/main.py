@@ -42,6 +42,8 @@ app.add_middleware(
         "http://127.0.0.1:3000",
         "http://127.0.0.1:3001",
         "http://127.0.0.1:3002"
+        "https://main.locofinder.pages.dev",
+        "https://locofinder.pages.dev",
     ],
     allow_credentials=True,
     allow_methods=["*"],
