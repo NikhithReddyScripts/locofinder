@@ -18,39 +18,42 @@ export default function ContactPage() {
     setTimeout(() => setSubmitted(false), 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-const teamMembers = [
-  {
-    name: 'Sumanth Paila',
-    role: 'Data Scientist',
-    description: 'Graduate student at SDSU specializing in computer vision and machine learning...',
-    image: '/Sumanth.jpg',
-  },
-  {
-    name: 'Nikhith Reddy',
-    role: 'Lead Developer',
-    description: 'Full-stack developer specializing in geospatial applications...',
-    image: '/Nikhith.png',
-  },
-  {
-    name: 'Narsimha Atla',
-    role: 'Data Engineer',
-    description: 'Expert in Python, FastAPI, and spatial data processing...',
-    image: '/Narsimha.jpg',
-  },
-];
+  const teamMembers = [
+    {
+      name: 'Sumanth Paila',
+      role: 'Data Scientist',
+      description:
+        'Graduate student at SDSU specializing in computer vision and machine learning. Passionate about applying AI to solve real-world business problems.',
+      image: '/Sumanth.jpg',
+    },
+    {
+      name: 'Nikhith Reddy',
+      role: 'Lead Developer',
+      description:
+        'Full-stack developer specializing in geospatial applications and AI integration. Passionate about building tools that help entrepreneurs make data-driven decisions.',
+      image: '/Nikhith.png',
+    },
+    {
+      name: 'Narsimha Atla',
+      role: 'Data Engineer',
+      description:
+        'Expert in Python, FastAPI, and spatial data processing. Focuses on building scalable backend systems and optimizing API performance.',
+      image: '/Narsimha.jpg',
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 py-12">
-       
-
         {/* Meet the Team Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
@@ -58,20 +61,18 @@ const teamMembers = [
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-                {/* Image Placeholder */}
-                <div className="h-64 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
-                  <div className="w-40 h-40 bg-white rounded-full flex items-center justify-center">
-                    <span className="text-6xl text-gray-400">👤</span>
-                  </div>
-                  {/* Uncomment below and remove placeholder above when you have actual images */}
-                  {/* <img 
-                    src={member.image} 
+              <div
+                key={index}
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
+              >
+                <div className="h-64 overflow-hidden">
+                  <img
+                    src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover"
-                  /> */}
+                  />
                 </div>
-                
+
                 {/* Team Member Info */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-1">
@@ -88,7 +89,8 @@ const teamMembers = [
             ))}
           </div>
         </section>
-	 {/* Header */}
+
+        {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Contact Us
@@ -97,6 +99,7 @@ const teamMembers = [
             Have questions? We&apos;d love to hear from you.
           </p>
         </div>
+
         {/* Contact Form and Info */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Contact Info */}
@@ -238,7 +241,7 @@ const teamMembers = [
                 How accurate is the location data?
               </h3>
               <p className="text-gray-700">
-                We use real-time data from US Census Bureau, Google Places API, and other authoritative 
+                We use real-time data from US Census Bureau, Google Places API, and other authoritative
                 sources to ensure the highest accuracy. Data is updated regularly.
               </p>
             </div>
@@ -248,7 +251,7 @@ const teamMembers = [
                 Can I analyze locations outside San Diego?
               </h3>
               <p className="text-gray-700">
-                Currently, LocoFinder is optimized for San Diego. We are working on expanding to other 
+                Currently, LocoFinder is optimized for San Diego. We are working on expanding to other
                 major cities. Contact us if you are interested in a specific region.
               </p>
             </div>
@@ -258,7 +261,7 @@ const teamMembers = [
                 Is there a limit to how many searches I can perform?
               </h3>
               <p className="text-gray-700">
-                The free tier allows unlimited searches with basic features. Premium plans offer 
+                The free tier allows unlimited searches with basic features. Premium plans offer
                 advanced analytics, export features, and priority support.
               </p>
             </div>
@@ -268,8 +271,8 @@ const teamMembers = [
                 How does the AI competitor analysis work?
               </h3>
               <p className="text-gray-700">
-                Our AI analyzes customer reviews from Google Places to identify common strengths, 
-                weaknesses, and market opportunities. This helps you understand the competitive 
+                Our AI analyzes customer reviews from Google Places to identify common strengths,
+                weaknesses, and market opportunities. This helps you understand the competitive
                 landscape before opening your business.
               </p>
             </div>
