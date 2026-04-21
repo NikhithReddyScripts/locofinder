@@ -50,15 +50,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 py-12">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Contact Us
-          </h1>
-          <p className="text-xl text-gray-600">
-            Have questions? We&apos;d love to hear from you.
-          </p>
-        </div>
+       
 
         {/* Meet the Team Section */}
         <section className="mb-16">
@@ -97,7 +89,15 @@ export default function ContactPage() {
             ))}
           </div>
         </section>
-
+	 {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Contact Us
+          </h1>
+          <p className="text-xl text-gray-600">
+            Have questions? We&apos;d love to hear from you.
+          </p>
+        </div>
         {/* Contact Form and Info */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Contact Info */}
