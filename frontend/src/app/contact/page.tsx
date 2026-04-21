@@ -30,19 +30,19 @@ export default function ContactPage() {
       name: 'Sumanth Paila',
       role: 'Data Scientist',
       description: 'Graduate student at SDSU specializing in computer vision and machine learning. Passionate about applying AI to solve real-world business problems.',
-      image: '/team/sumanth.jpg', // Replace with actual image path
+      image: 'https://github.com/NikhithReddyScripts/locofinder/blob/main/frontend/public/Sumanth.jpg', // Replace with actual image path
     },
     {
       name: 'Nikhith Reddy',
       role: 'Lead Developer',
       description: 'Full-stack developer specializing in geospatial applications and AI integration. Passionate about building tools that help entrepreneurs make data-driven decisions.',
-      image: '/team/nikhith.jpg', // Replace with actual image path
+      image: 'https://github.com/NikhithReddyScripts/locofinder/blob/main/frontend/public/Nikhith.png', // Replace with actual image path
     },
     {
       name: 'Narsimha Atla',
-      role: 'Backend Engineer',
+      role: 'Data Engineer',
       description: 'Expert in Python, FastAPI, and spatial data processing. Focuses on building scalable backend systems and optimizing API performance.',
-      image: '/team/narsimha.jpg', // Replace with actual image path
+      image: 'https://github.com/NikhithReddyScripts/locofinder/blob/main/frontend/public/Narsimha.jpg', // Replace with actual image path
     },
     
   ];
