@@ -210,7 +210,8 @@ class EnhancedCensusService:
                 income_25_50k = sum(int(row[i] or 0) for i in range(5, 8))
                 income_50_75k = sum(int(row[i] or 0) for i in range(8, 11))
                 income_75_100k = sum(int(row[i] or 0) for i in range(11, 13))
-                income_100k_plus = sum(int(row[i] or 0) for i in range(13, 17))
+                income_100_150k = sum(int(row[i] or 0) for i in range(13, 15))
+                income_150k_plus = sum(int(row[i] or 0) for i in range(15, 17))
                 
                 income_data[geoid] = {
                     "total_households": total,
@@ -218,7 +219,8 @@ class EnhancedCensusService:
                     "$25k-$50k": income_25_50k,
                     "$50k-$75k": income_50_75k,
                     "$75k-$100k": income_75_100k,
-                    "$100k+": income_100k_plus,
+                    "$100k-$150k": income_100_150k,
+                    "$150k+": income_150k_plus,
                 }
             
             return income_data
