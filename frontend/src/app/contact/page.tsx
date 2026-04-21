@@ -35,7 +35,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-xl text-gray-600">
-            Have questions? We'd love to hear from you.
+            Have questions? We&apos;d love to hear from you.
           </p>
         </div>
 
@@ -189,8 +189,8 @@ export default function ContactPage() {
                 Can I analyze locations outside San Diego?
               </h3>
               <p className="text-gray-700">
-                Currently, LocoFinder is optimized for San Diego. We're working on expanding to other 
-                major cities. Contact us if you're interested in a specific region.
+                Currently, LocoFinder is optimized for San Diego. We are working on expanding to other 
+                major cities. Contact us if you are interested in a specific region.
               </p>
             </div>
 

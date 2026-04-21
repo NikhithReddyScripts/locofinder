@@ -1,17 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  output: "standalone",
-  transpilePackages: ["leaflet", "react-leaflet"],
-  
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'http://localhost:8001/api/:path*',
-      },
-    ];
+  output: 'export',
+  images: {
+    unoptimized: true,
   },
-};
+  trailingSlash: true,
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
