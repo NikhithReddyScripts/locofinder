@@ -54,7 +54,8 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 py-12">
-        {/* Meet the Team Section */}
+        
+        {/* Meet the Team */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
             Meet the Team
@@ -73,7 +74,6 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Team Member Info */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-1">
                     {member.name}
@@ -100,8 +100,9 @@ export default function ContactPage() {
           </p>
         </div>
 
-        {/* Contact Form and Info */}
+        {/* Contact Section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
           {/* Contact Info */}
           <div className="space-y-6">
             <div className="bg-white rounded-lg shadow-md p-6">
@@ -119,14 +120,6 @@ export default function ContactPage() {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Live Chat</h3>
               <p className="text-gray-600">Available Mon-Fri, 9am-5pm PST</p>
             </div>
-
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-2xl">📍</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Location</h3>
-              <p className="text-gray-600">San Diego, CA</p>
-            </div>
           </div>
 
           {/* Contact Form */}
@@ -143,14 +136,12 @@ export default function ContactPage() {
               )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name */}
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
                     Name *
                   </label>
                   <input
                     type="text"
-                    id="name"
                     name="name"
                     required
                     value={formData.name}
@@ -160,14 +151,12 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Email */}
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
                     Email *
                   </label>
                   <input
                     type="email"
-                    id="email"
                     name="email"
                     required
                     value={formData.email}
@@ -177,13 +166,11 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Subject */}
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
                     Subject *
                   </label>
                   <select
-                    id="subject"
                     name="subject"
                     required
                     value={formData.subject}
@@ -200,13 +187,11 @@ export default function ContactPage() {
                   </select>
                 </div>
 
-                {/* Message */}
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
                     Message *
                   </label>
                   <textarea
-                    id="message"
                     name="message"
                     required
                     rows={6}
@@ -217,7 +202,6 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Submit Button */}
                 <button
                   type="submit"
                   className="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 font-medium transition-colors"
@@ -229,55 +213,6 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* FAQ Section */}
-        <div className="mt-12 bg-white rounded-lg shadow-md p-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-            Frequently Asked Questions
-          </h2>
-
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                How accurate is the location data?
-              </h3>
-              <p className="text-gray-700">
-                We use real-time data from US Census Bureau, Google Places API, and other authoritative
-                sources to ensure the highest accuracy. Data is updated regularly.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Can I analyze locations outside San Diego?
-              </h3>
-              <p className="text-gray-700">
-                Currently, LocoFinder is optimized for San Diego. We are working on expanding to other
-                major cities. Contact us if you are interested in a specific region.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Is there a limit to how many searches I can perform?
-              </h3>
-              <p className="text-gray-700">
-                The free tier allows unlimited searches with basic features. Premium plans offer
-                advanced analytics, export features, and priority support.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                How does the AI competitor analysis work?
-              </h3>
-              <p className="text-gray-700">
-                Our AI analyzes customer reviews from Google Places to identify common strengths,
-                weaknesses, and market opportunities. This helps you understand the competitive
-                landscape before opening your business.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
