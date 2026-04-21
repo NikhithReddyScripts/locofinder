@@ -22,7 +22,7 @@ export default function SWOTPage() {
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8 text-center">
           <h2 className="text-2xl font-semibold text-blue-900 mb-2">🚧 Coming Soon</h2>
           <p className="text-blue-700">
-            SWOT Analysis feature is currently under development. Check back soon for detailed 
+            SWOT Analysis feature is currently under development. Check back soon for detailed
             location-specific analysis!
           </p>
         </div>
@@ -43,11 +43,11 @@ export default function SWOTPage() {
                 <h3 className="text-xl font-semibold text-green-900">Strengths</h3>
               </div>
               <ul className="space-y-2 text-green-800">
-                <li>• High population density</li>
-                <li>• Strong demographic match</li>
-                <li>• Excellent accessibility</li>
-                <li>• Low competition</li>
-                <li>• High foot traffic</li>
+                <li>• We solve the 5-tab problem</li>
+                <li>• Not just AI vibes — real, multi-source data</li>
+                <li>• Output tells you why, not just where</li>
+                <li>• Decision-oriented, not data-heavy</li>
+                <li>• Clean frontend + powerful geospatial backend</li>
               </ul>
             </div>
 
@@ -60,11 +60,10 @@ export default function SWOTPage() {
                 <h3 className="text-xl font-semibold text-red-900">Weaknesses</h3>
               </div>
               <ul className="space-y-2 text-red-800">
-                <li>• Limited parking availability</li>
-                <li>• Higher rental costs</li>
-                <li>• Zoning restrictions</li>
-                <li>• Distance from suppliers</li>
-                <li>• Seasonal fluctuations</li>
+                <li>• San Diego only — geographic scope is limited</li>
+                <li>• Top spots can tie on scores — ranking needs more nuance</li>
+                <li>• Foot traffic is estimated, not directly measured</li>
+                <li>• Competitor buckets are too broad for some business types</li>
               </ul>
             </div>
 
@@ -77,11 +76,10 @@ export default function SWOTPage() {
                 <h3 className="text-xl font-semibold text-yellow-900">Opportunities</h3>
               </div>
               <ul className="space-y-2 text-yellow-800">
-                <li>• Underserved market segment</li>
-                <li>• Growing neighborhood</li>
-                <li>• New developments nearby</li>
-                <li>• Gaps in competitor offerings</li>
-                <li>• Strategic partnerships</li>
+                <li>• New city = config change, not a rebuild</li>
+                <li>• SWOT output is a natural next feature to build</li>
+                <li>• Plug in richer data, evolve into a full platform</li>
+                <li>• Exportable reports open up a B2B market</li>
               </ul>
             </div>
 
@@ -94,11 +92,11 @@ export default function SWOTPage() {
                 <h3 className="text-xl font-semibold text-purple-900">Threats</h3>
               </div>
               <ul className="space-y-2 text-purple-800">
-                <li>• Market saturation risk</li>
-                <li>• Economic downturn</li>
-                <li>• Changing demographics</li>
-                <li>• New competitors entering</li>
-                <li>• Regulatory changes</li>
+                <li>• We rely on 3 external vendors — rate limits are a real risk</li>
+                <li>• AI sounds confident even on thin data</li>
+                <li>• Unpolished UI can quietly kill credibility</li>
+                <li>• Neighborhoods change faster than ACS data refreshes</li>
+                <li>• Zoning shown ≠ zoning approved</li>
               </ul>
             </div>
           </div>
