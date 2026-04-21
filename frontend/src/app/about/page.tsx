@@ -23,16 +23,13 @@ export default function AboutPage() {
             <iframe
               width="100%"
               height="100%"
-              src="https://youtu.be/PpmYUbW4LSI"
+              src="https://www.youtube.com/embed/PpmYUbW4LSI"
               title="LocoFinder Demo"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="rounded-lg"
             ></iframe>
-            <p className="text-sm text-gray-500 text-center mt-2">
-              Replace YOUR_VIDEO_ID_HERE with your actual YouTube video ID
-            </p>
           </div>
         </div>
 
