@@ -30,19 +30,19 @@ const teamMembers = [
     name: 'Sumanth Paila',
     role: 'Data Scientist',
     description: 'Graduate student at SDSU specializing in computer vision and machine learning...',
-    image: 'https://raw.githubusercontent.com/NikhithReddyScripts/locofinder/main/frontend/public/Sumanth.jpg',
+    image: '/Sumanth.jpg',
   },
   {
     name: 'Nikhith Reddy',
     role: 'Lead Developer',
     description: 'Full-stack developer specializing in geospatial applications...',
-    image: 'https://raw.githubusercontent.com/NikhithReddyScripts/locofinder/main/frontend/public/Nikhith.png',
+    image: '/Nikhith.png',
   },
   {
     name: 'Narsimha Atla',
     role: 'Data Engineer',
     description: 'Expert in Python, FastAPI, and spatial data processing...',
-    image: 'https://raw.githubusercontent.com/NikhithReddyScripts/locofinder/main/frontend/public/Narsimha.jpg',
+    image: '/Narsimha.jpg',
   },
 ];
 
