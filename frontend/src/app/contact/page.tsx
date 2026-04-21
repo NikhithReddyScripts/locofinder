@@ -25,27 +25,26 @@ export default function ContactPage() {
     });
   };
 
-  const teamMembers = [
-     {
-      name: 'Sumanth Paila',
-      role: 'Data Scientist',
-      description: 'Graduate student at SDSU specializing in computer vision and machine learning. Passionate about applying AI to solve real-world business problems.',
-      image: 'https://github.com/NikhithReddyScripts/locofinder/blob/main/frontend/public/Sumanth.jpg', // Replace with actual image path
-    },
-    {
-      name: 'Nikhith Reddy',
-      role: 'Lead Developer',
-      description: 'Full-stack developer specializing in geospatial applications and AI integration. Passionate about building tools that help entrepreneurs make data-driven decisions.',
-      image: 'https://github.com/NikhithReddyScripts/locofinder/blob/main/frontend/public/Nikhith.png', // Replace with actual image path
-    },
-    {
-      name: 'Narsimha Atla',
-      role: 'Data Engineer',
-      description: 'Expert in Python, FastAPI, and spatial data processing. Focuses on building scalable backend systems and optimizing API performance.',
-      image: 'https://github.com/NikhithReddyScripts/locofinder/blob/main/frontend/public/Narsimha.jpg', // Replace with actual image path
-    },
-    
-  ];
+const teamMembers = [
+  {
+    name: 'Sumanth Paila',
+    role: 'Data Scientist',
+    description: 'Graduate student at SDSU specializing in computer vision and machine learning...',
+    image: 'https://raw.githubusercontent.com/NikhithReddyScripts/locofinder/main/frontend/public/Sumanth.jpg',
+  },
+  {
+    name: 'Nikhith Reddy',
+    role: 'Lead Developer',
+    description: 'Full-stack developer specializing in geospatial applications...',
+    image: 'https://raw.githubusercontent.com/NikhithReddyScripts/locofinder/main/frontend/public/Nikhith.png',
+  },
+  {
+    name: 'Narsimha Atla',
+    role: 'Data Engineer',
+    description: 'Expert in Python, FastAPI, and spatial data processing...',
+    image: 'https://raw.githubusercontent.com/NikhithReddyScripts/locofinder/main/frontend/public/Narsimha.jpg',
+  },
+];
 
   return (
     <div className="min-h-screen bg-gray-50">
